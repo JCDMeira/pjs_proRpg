@@ -23,6 +23,8 @@ export const cleanSlug = (text = '') =>
 
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
 export const ARVAK_BASE = cleanSlug(APP_BLOG?.list?.pathname);
+export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
+export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 
 export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
 
@@ -76,10 +78,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 /** */
 export const getHomePermalink = (): string => getPermalink('/');
 
-export const getArvakPermalink = (): string => {
-  console.log(ARVAK_BASE);
-  return getPermalink(ARVAK_BASE);
-};
+export const getArvakPermalink = (): string => getPermalink(ARVAK_BASE);
 
 /** */
 export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);

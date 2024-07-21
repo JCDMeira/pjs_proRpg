@@ -1,4 +1,4 @@
-import { getArvakPermalink, getBlogPermalink } from './utils/permalinks';
+import { getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -11,7 +11,7 @@ export const headerData = {
       links: [
         {
           text: 'Arvak Von Neustain',
-          href: getArvakPermalink(),
+          href: 'arvak',
         },
         {
           text: 'Outro',
