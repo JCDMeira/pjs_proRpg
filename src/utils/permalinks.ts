@@ -22,7 +22,6 @@ export const cleanSlug = (text = '') =>
     .join('/');
 
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
-export const ARVAK_BASE = cleanSlug(APP_BLOG?.list?.pathname);
 export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
 export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
 
@@ -62,8 +61,20 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = getBlogPermalink();
       break;
 
-    case 'arvak':
-      permalink = getArvakPermalink();
+    case 'asset':
+      permalink = getAsset(slug);
+      break;
+
+    case 'category':
+      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+      break;
+
+    case 'tag':
+      permalink = createPath(TAG_BASE, trimSlash(slug));
+      break;
+
+    case 'post':
+      permalink = createPath(trimSlash(slug));
       break;
 
     case 'page':
@@ -77,8 +88,6 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 
 /** */
 export const getHomePermalink = (): string => getPermalink('/');
-
-export const getArvakPermalink = (): string => getPermalink(ARVAK_BASE);
 
 /** */
 export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
@@ -109,8 +118,8 @@ export const applyGetPermalinks = (menu: object = {}) => {
             obj[key] = getHomePermalink();
           } else if (menu[key].type === 'blog') {
             obj[key] = getBlogPermalink();
-          } else if (menu[key].type === 'arvak') {
-            obj[key] = getArvakPermalink();
+          } else if (menu[key].type === 'asset') {
+            obj[key] = getAsset(menu[key].url);
           } else if (menu[key].url) {
             obj[key] = getPermalink(menu[key].url, menu[key].type);
           }

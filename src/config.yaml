@@ -48,24 +48,17 @@ apps:
       robots:
         index: true
 
-    isRelatedPostsEnabled: true
-    relatedPostsCount: 4
-
-  arvak:
-    isEnabled: true
-    postsPerPage: 20
-
-    post:
+    category:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
         index: true
 
-    list:
+    tag:
       isEnabled: true
-      pathname: 'arvak' # Blog main path, you can change this to "articles" (/articles)
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
-        index: true
+        index: false
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
