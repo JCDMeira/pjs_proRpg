@@ -4,12 +4,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 
 import Hero2 from '~/components/widgets/Hero2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
@@ -78,43 +74,6 @@ const metadata = {
       </Button>
     </div>
   </Hero2>
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    id="features"
-    title="How to use our app?"
-    subtitle="Tired of spending hours crafting documents from scratch? Our app offers an innovative solution. With a wide array of professionally designed templates, you can now create stunning documents in minutes. Explore our templates now and experience the difference."
-    tagline="Step-by-step guide"
-    columns={2}
-    items={[
-      {
-        title: 'Download and install the app',
-        description: `Begin your journey by downloading our user-friendly app from your device's app store or our official website.`,
-        icon: 'tabler:square-number-1',
-      },
-      {
-        title: 'Sign up',
-        description:
-          'Create your account by providing the necessary information, enabling you to access our full range of features.',
-        icon: 'tabler:square-number-2',
-      },
-      {
-        title: 'Browse templates',
-        description: 'Explore our diverse collection of website templates, categorized for easy navigation.',
-        icon: 'tabler:square-number-3',
-      },
-      {
-        title: 'Preview and select a template',
-        description: `Visualize the potential of each template through previews, then choose the one that aligns best with your project's needs.`,
-        icon: 'tabler:square-number-4',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1521517407911-565264e7d82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
 
   <!-- Content Widget **************** -->
 
@@ -192,17 +151,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="Statistics of our app"
-    stats={[
-      { amount: '20K', icon: 'tabler:download' },
-      { amount: '18.5K', icon: 'tabler:users' },
-      { amount: '4.7', icon: 'tabler:user-star' },
-    ]}
-  />
-
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
@@ -244,54 +192,4 @@ const metadata = {
       icon: 'tabler:chevron-right',
     }}
   />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Still have some doubts?"
-    items={[
-      {
-        title: 'What does this app do?',
-        description:
-          'This app provides a platform for you to easily browse, purchase, download, and use a wide range of website templates for your projects.',
-      },
-      {
-        title: 'How can this app solve my problem?',
-        description:
-          'This app streamlines the process of finding and implementing professional website designs, saving you time and effort in creating visually appealing and functional websites.',
-      },
-      {
-        title: 'Is it available for my device?',
-        description: `Our app is designed for compatibility across various devices and platforms, ensuring accessibility whether you're using a smartphone, tablet, or computer.`,
-      },
-      {
-        title: 'What makes this app different from others?',
-        description:
-          'Our app stands out for its user-friendly interface, extensive template collection, and seamless integration of the purchasing and downloading process, making it highly efficient.',
-      },
-      {
-        title: 'Are there any costs involved?',
-        description:
-          'While the app itself may be free to download, there may be costs associated with purchasing specific templates based on your preferences and project requirements.',
-      },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    id="download"
-    title="Download our app now!"
-    subtitle="Access a variety of stunning templates, simplify your creative process, and elevate your online presence."
-  >
-    <div slot="actions" class="flex max-w-sm gap-4">
-      <Button variant="link" href={appStoreDownloadLink}>
-        <Image src={appStoreImg} alt="App Store Image" width={200} />
-      </Button>
-
-      <Button variant="link" href={googlePlayDownloadLink}>
-        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
-      </Button>
-    </div>
-  </CallToAction>
 </Layout>
