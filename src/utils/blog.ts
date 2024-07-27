@@ -5,6 +5,8 @@ import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
+export const PJS_NAMES = ['arvak'] as const;
+
 const generatePermalink = async ({
   id,
   slug,
